@@ -346,10 +346,134 @@
         .page-transition.active {
             transform: scaleX(1);
         }
+
+        @media (max-width: 768px) {
+            .right-half {
+                grid-template-columns: 1fr;
+                /* jadi 1 kolom */
+                height: auto;
+            }
+
+            .block {
+                min-height: 200px;
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .about-text,
+            .video-box {
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-text .intro,
+            .about-text .bio,
+            .about-bio-full .bio {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .profile-photo {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .sidebar-right {
+                display: none;
+                /* Sembunyikan sidebar di mobile */
+            }
+
+            .section {
+                padding: 10px;
+            }
+
+            .left-half {
+                padding: 20px;
+            }
+
+            .left-half h1 {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .social-icons a {
+                font-size: 16px;
+            }
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 28px;
+            background: #5826c1;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            z-index: 10001;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            left: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+            z-index: 10000;
+            width: 200px;
+        }
+
+        .mobile-nav a {
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .mobile-nav a:hover {
+            background: #f0f0f0;
+        }
+
+        @media (max-width: 991px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="mobile-nav-toggle" onclick="toggleMobileNav()">☰</div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+
     <!-- Page Transition -->
     <div id="pageTransition" class="page-transition"></div>
 
@@ -413,7 +537,8 @@
                 </div>
                 <div class="about-bio-full">
                     <p class="bio">
-                        I am a Bachelor of Applied Science graduate in Informatics Engineering from the State Polytechnic of
+                        I am a Bachelor of Applied Science graduate in Informatics Engineering from the State
+                        Polytechnic of
                         Jember, with a GPA of 3.81. I am a passionate Web Developer with over 2 years of experience in
                         developing web applications, covering both front-end and back-end development. Skilled in HTML,
                         CSS, and JavaScript, as well as programming languages such as PHP, Java, and ColdFusion, I focus
@@ -506,6 +631,11 @@
                 document.getElementById(targetId).classList.add('active');
                 transition.classList.remove('active');
             }, 600);
+        }
+
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         }
     </script>
 </body>
