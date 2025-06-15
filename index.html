@@ -89,13 +89,13 @@
                 linear-gradient(to bottom right, rgba(106, 17, 203, 0.6), rgba(37, 117, 252, 0.6));
         }
 
-        .services {
+        .professions {
             background:
                 url('assets/img/services-4-2.png') center center / cover no-repeat,
                 linear-gradient(to bottom right, #fc466b, #3f5efb);
         }
 
-        .services:hover {
+        .professions:hover {
             background:
                 url('assets/img/services-4-2.png') center center / 120% no-repeat,
                 linear-gradient(to bottom right, #fc466b, #3f5efb);
@@ -169,6 +169,47 @@
 
         .about-container h2 span {
             color: #5826c1;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 20px;
+        }
+
+        .about-header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .video-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .video-box img.profile-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .about-bio-full {
+            width: 100%;
+            background-color: #f9f9f9;
+            /* opsional, untuk membedakan bagian ini */
+            padding: 1rem;
+            border-radius: 8px;
         }
 
         .profile-photo {
@@ -276,6 +317,18 @@
             }
         }
 
+        .profile-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .profile-list li {
+            margin-bottom: 6px;
+        }
+
+
         /* Transition Effect */
         .page-transition {
             position: fixed;
@@ -320,9 +373,9 @@
                             <img class="nav-icons" src="assets/img/diamond-4-2.png" alt="About Icon">
                             <span>About</span>
                         </div>
-                        <div class="block services" onclick="navigatePage('services')">
-                            <img class="nav-icons" src="assets/img/thunder-4-2.png" alt="Services Icon">
-                            <span>Services</span>
+                        <div class="block professions" onclick="navigatePage('professions')">
+                            <img class="nav-icons" src="assets/img/thunder-4-2.png" alt="Professions Icon">
+                            <span>Professions</span>
                         </div>
                         <div class="block contact" onclick="navigatePage('contact')">
                             <img class="nav-icons" src="assets/img/map-4-2.png" alt="Contact Icon">
@@ -341,6 +394,80 @@
     <!-- Section: About -->
     <section id="about" class="section">
         <div class="about-container">
+            <div class="about-section">
+                <div class="about-header">
+                    <div class="about-text">
+                        <h2>Hello, I'm <span>Rizki Widya P</span></h2>
+                        <p class="intro">A passionate developer who believes in simplicity, elegance, and continuous
+                            growth.</p>
+                        <p class="bio">
+                            With a strong foundation in web development and problem solving, I focus on building clean,
+                            efficient, and user-friendly digital solutions. My journey in tech is driven by curiosity
+                            and
+                            creativity — always exploring new ways to turn ideas into reality.
+                        </p>
+                    </div>
+                    <div class="video-box">
+                        <img src="assets/img/tes.jpg" class="img-fluid profile-photo" alt="Rizki Widya P">
+                    </div>
+                </div>
+                <div class="about-bio-full">
+                    <p class="bio">
+                        I am a Bachelor of Applied Science graduate in Informatics Engineering from the State Polytechnic of
+                        Jember, with a GPA of 3.81. I am a passionate Web Developer with over 2 years of experience in
+                        developing web applications, covering both front-end and back-end development. Skilled in HTML,
+                        CSS, and JavaScript, as well as programming languages such as PHP, Java, and ColdFusion, I focus
+                        on building responsive, interactive, and scalable web solutions. I am proficient in using tools
+                        and platforms such as Git for version control and CI/CD pipelines like Jenkins and GitHub
+                        Actions. I enjoy keeping up with the latest trends in web technologies, continuously improving
+                        my technical skills, and taking on challenges that involve creating meaningful and impactful
+                        products.
+                    </p>
+                    <p class="bio">
+                        Throughout my career, I have: Designed and developed intuitive and user-friendly user interfaces
+                        (UI). Built backend APIs and managed databases such as MySQL, PostgreSQL, and MongoDB. Optimized
+                        application performance using caching techniques and page load enhancements. Collaborated across
+                        departments—including product, accounting, finance, QA, and clients—to understand business needs
+                        and translate them into effective technical solutions. With this background, I am confident in
+                        my ability to contribute effectively to dynamic, growth-driven teams and projects.
+                    </p>
+                </div>
+            </div>
+            <div class="about-section">
+                <div class="about-header">
+                    <div class="about-text">
+                        <h2>Pro<span>file</span></h2>
+                        <ul class="profile-list" style="margin-left: 3vh;">
+                            <li><strong>Full Name:</strong> Rizki Widya Pratama</li>
+                            <li><strong>Age:</strong> 25 years old</li>
+                            <li><strong>Gender:</strong> Male</li>
+                            <li><strong>Education:</strong> Bachelor's Degree in Informatics Engineering</li>
+                            <li><strong>Profession:</strong> Web Developer</li>
+                            <li><strong>Location:</strong> Indonesia</li>
+                            <li><strong>Languages:</strong> Indonesian, English</li>
+                            <li><strong>Hobbies:</strong> Coding, Reading Tech Articles, Playing Games</li>
+                            <li><strong>Personal Traits:</strong> Creative, Detail-Oriented, Problem Solver</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-right">
+            <span class="close-btn" onclick="navigatePage('dashboard')">&times;</span>
+            <h4>About Us</h4>
+            <i class="fas fa-gem"></i>
+            <hr class="sidebar-divider">
+            <div class="sidebar-nav">
+                <a href="portfolio.html">&lt; Portfolio</a>
+                <a href="services.html">Services &gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Profession -->
+    <section id="professions" class="section">
+        <div class="about-container">
             <div class="about-text">
                 <h2>Hello, I'm <span>Rizki Widya P</span></h2>
                 <p class="intro">A passionate developer who believes in simplicity, elegance, and continuous growth.</p>
@@ -350,10 +477,6 @@
                     and user-friendly digital solutions. My journey in tech is driven by curiosity and creativity —
                     always exploring new ways to turn ideas into reality.
                 </p>
-                <!-- <div class="sidebar-nav">
-                    <a href="#" onclick="navigatePage('dashboard')">&larr; Back</a>
-                    <a href="#">Services &rarr;</a>
-                </div> -->
             </div>
             <div class="video-box">
                 <img src="assets/img/tes.jpg" class="img-fluid profile-photo" alt="Rizki Widya P">
