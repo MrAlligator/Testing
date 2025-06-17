@@ -315,6 +315,11 @@
                 display: none;
                 /* Hide sidebar on smaller screens */
             }
+
+            .sidebar-right-exp {
+                display: none;
+                /* Hide sidebar on smaller screens */
+            }
         }
 
         .profile-list {
@@ -345,6 +350,12 @@
 
         .page-transition.active {
             transform: scaleX(1);
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar-right-exp {
+                display: none !important;
+            }
         }
 
         @media (max-width: 768px) {
@@ -392,6 +403,11 @@
             }
 
             .sidebar-right {
+                display: none;
+                /* Sembunyikan sidebar di mobile */
+            }
+
+            .sidebar-right-exp {
                 display: none;
                 /* Sembunyikan sidebar di mobile */
             }
@@ -542,11 +558,11 @@
 
     <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
-        <button onclick="navigatePage('dashboard')">Dashboard</button>
-        <button onclick="navigatePage('about')">About</button>
-        <button onclick="navigatePage('professions')">Profession</button>
-        <button onclick="navigatePage('portfolio')">Portfolio</button>
-        <button onclick="navigatePage('contact')">Contact</button>
+        <button onclick="navigatePage('dashboard'); toggleMobileNav();">Dashboard</button>
+        <button onclick="navigatePage('about'); toggleMobileNav();">About</button>
+        <button onclick="navigatePage('professions'); toggleMobileNav();">Profession</button>
+        <button onclick="navigatePage('portfolio'); toggleMobileNav();">Portfolio</button>
+        <button onclick="navigatePage('contact'); toggleMobileNav();">Contact</button>
     </div>
 
     <!-- Page Transition -->
@@ -673,7 +689,7 @@
                     <h3>Work Experience</h3>
                     <div class="experience-item d-flex align-items-start gap-3">
                         <img src="assets/img/kokola2.png" alt="PT Makanan Sehat Logo" class="experience-logo">
-                        <div>
+                        <div style="text-align: justify;">
                             <h5>Management Information System Staff - PT Mega Global Food Industry</h5>
                             <p class="experience-date">Oct 2022 - Present</p>
                             <ul>
@@ -689,7 +705,7 @@
 
                     <div class="experience-item d-flex align-items-start gap-3">
                         <img src="assets/img/elecomp_logo.png" alt="PT Makanan Sehat Logo" class="experience-logo">
-                        <div>
+                        <div style="text-align: justify;">
                             <h5>Junior Web Developer (Internship) - PT Elecomp Indonesia</h5>
                             <p class="experience-date">Sep 2021 - Jan 2022</p>
                             <ul>
@@ -706,7 +722,7 @@
         <div class="sidebar-right-exp">
             <span class="close-btn" onclick="navigatePage('dashboard')">&times;</span>
             <h4>Professions</h4>
-            <i class="fas fa-gem"></i>
+            <i class="fas fa-thunder"></i>
             <hr class="sidebar-divider">
             <div class="sidebar-nav">
                 <a href="#" onclick="navigatePage('about'); event.preventDefault();">&lt; About</a>
