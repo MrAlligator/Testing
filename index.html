@@ -459,6 +459,20 @@
                 display: block;
             }
         }
+
+        .mobile-nav button {
+            background: none;
+            border: none;
+            color: inherit;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .mobile-nav button:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -467,11 +481,11 @@
 
     <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="" onclick="navigatePage('dashboard')">Dashboard</a>
-        <a href="" onclick="navigatePage('about')">About</a>
-        <a href="" onclick="navigatePage('professions')">Profession</a>
-        <a href="" onclick="navigatePage('portfolio')">Portfolio</a>
-        <a href="" onclick="navigatePage('contact')">Contact</a>
+        <button onclick="navigatePage('dashboard')">Dashboard</button>
+        <button onclick="navigatePage('about')">About</button>
+        <button onclick="navigatePage('professions')">Profession</button>
+        <button onclick="navigatePage('portfolio')">Portfolio</button>
+        <button onclick="navigatePage('contact')">Contact</button>
     </div>
 
     <!-- Page Transition -->
